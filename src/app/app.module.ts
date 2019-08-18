@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { GuildsComponent } from './guilds/guilds.component';
@@ -11,8 +13,9 @@ import { GuildsComponent } from './guilds/guilds.component';
     GuildsComponent
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    BrowserModule
   ],
   providers: [],
   bootstrap: [AppComponent]
