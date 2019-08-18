@@ -1,4 +1,8 @@
 <p>
   guilds works!
-  {{this.currentGuild.name}}
 </p>
+<ul>
+  <li *ngFor='let guild of guildList'>
+    {{guild.name}}
+  </li>
+</ul>

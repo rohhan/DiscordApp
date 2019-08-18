@@ -9,12 +9,15 @@ import { IGuild } from '../models/guild';
 })
 export class GuildsComponent implements OnInit {
 
-  currentGuild: IGuild;
+  guildList: IGuild[];
+  errorMessage: string;
 
   constructor(private guildService: GuildService) { }
 
   ngOnInit() {
-    this.currentGuild = this.guildService.GetGuilds();
+    this.guildService.GetGuilds().subscribe({
+      next: guilds => this.guildList = guilds,
+      error: err => this.errorMessage = err
+    });
   }
-
 }
