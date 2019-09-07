@@ -12,11 +12,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { GuildTableComponent } from './components/guildtable/guildtable.component';
 
 const routes: Routes = [
-  { path: '', component: GuildManagerAppComponent,
+  { path: 'guilds', component: GuildManagerAppComponent,
     children: [
       { path: '', component: MainContentComponent }
-    ] },
-  { path: '**', redirectTo: '' }
+    ] }
 ];
 
 @NgModule({
