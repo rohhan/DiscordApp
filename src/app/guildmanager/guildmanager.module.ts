@@ -5,11 +5,17 @@ import { MaterialModule } from '../shared/material.module';
 import { GuildManagerAppComponent } from './guildmanagerapp.component';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { ToolbarComponent } from './components/toolbar/toolbar.component';
+import { SidenavComponent } from './components/sidenav/sidenav.component';
+import { MainContentComponent } from './components/maincontent/maincontent.component';
 
 @NgModule({
   declarations: [
     GuildManagerAppComponent,
-    GuildsComponent
+    GuildsComponent,
+    MainContentComponent,
+    ToolbarComponent,
+    SidenavComponent
   ],
   imports: [
     CommonModule,
