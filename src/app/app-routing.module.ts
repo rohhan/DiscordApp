@@ -1,10 +1,19 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-const routes: Routes = [];
+import { GuildManagerAppComponent } from './guildmanager/guildmanagerapp.component';
+import { GuildManagerModule } from './guildmanager/guildmanager.module';
+
+const routes: Routes = [
+  { path: 'guilds', component: GuildManagerAppComponent },
+  { path: '**', redirectTo: 'guilds' }
+];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    GuildManagerModule,
+    RouterModule.forRoot(routes)
+  ],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
