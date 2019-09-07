@@ -5,27 +5,27 @@
               The actual rendered columns are set as a property on the row definition" -->
 
     <!-- Position Column -->
-    <ng-container matColumnDef="position">
-      <th mat-header-cell *matHeaderCellDef> No. </th>
-      <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+    <ng-container matColumnDef="dateCreated">
+      <th mat-header-cell *matHeaderCellDef> Date Created </th>
+      <td mat-cell *matCellDef="let guild"> {{guild.dateCreated | date}} </td>
     </ng-container>
 
-    <!-- Name Column -->
-    <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef> Name </th>
-      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    <!-- Guild Id Column -->
+    <ng-container matColumnDef="guildId">
+      <th mat-header-cell *matHeaderCellDef> Guild Id </th>
+      <td mat-cell *matCellDef="let guild"> {{guild.guildId}} </td>
     </ng-container>
 
-    <!-- Weight Column -->
-    <ng-container matColumnDef="weight">
-      <th mat-header-cell *matHeaderCellDef> Weight </th>
-      <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+    <!-- Guild Name Column -->
+    <ng-container matColumnDef="guildName">
+      <th mat-header-cell *matHeaderCellDef> Guild Name </th>
+      <td mat-cell *matCellDef="let guild"> {{guild.guildName}} </td>
     </ng-container>
 
-    <!-- Symbol Column -->
-    <ng-container matColumnDef="symbol">
-      <th mat-header-cell *matHeaderCellDef> Symbol </th>
-      <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+    <!-- Owner Id Column -->
+    <ng-container matColumnDef="ownerId">
+      <th mat-header-cell *matHeaderCellDef> Owner Id </th>
+      <td mat-cell *matCellDef="let guild"> {{guild.ownerId}} </td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
