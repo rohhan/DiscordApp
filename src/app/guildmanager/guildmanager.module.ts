@@ -8,19 +8,29 @@ import { CommonModule } from '@angular/common';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { MainContentComponent } from './components/maincontent/maincontent.component';
+import { RouterModule, Routes } from '@angular/router';
+
+const routes: Routes = [
+  { path: '', component: GuildManagerAppComponent,
+    children: [
+      { path: '', component: MainContentComponent }
+    ] },
+  { path: '**', redirectTo: '' }
+];
 
 @NgModule({
   declarations: [
     GuildManagerAppComponent,
     GuildsComponent,
     MainContentComponent,
-    ToolbarComponent,
-    SidenavComponent
+    SidenavComponent,
+    ToolbarComponent
   ],
   imports: [
     CommonModule,
     FormsModule,
-    MaterialModule
+    MaterialModule,
+    RouterModule.forChild(routes),
   ],
   exports: [
 

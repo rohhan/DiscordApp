@@ -5,7 +5,7 @@ import { GuildManagerAppComponent } from './guildmanager/guildmanagerapp.compone
 import { GuildManagerModule } from './guildmanager/guildmanager.module';
 
 const routes: Routes = [
-  { path: 'guilds', component: GuildManagerAppComponent },
+  { path: 'guilds', loadChildren: './guildmanager/guildmanager.module#GuildManagerModule' },
   { path: '**', redirectTo: 'guilds' }
 ];
 
