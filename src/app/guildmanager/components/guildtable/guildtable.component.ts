@@ -12,7 +12,11 @@ import { GuildService } from 'src/app/services/guild.service';
 export class GuildTableComponent implements OnInit {
   displayedColumns: string[] = ['dateCreated', 'guildId', 'guildName', 'ownerId'];
   dataSource: MatTableDataSource<IGuild>;
-  guildz: IGuild[];
+  sampleGuildData: IGuild[] = [
+    { dateCreated: new Date(), guildId: '1234', guildName: 'Turn on the backend API', ownerId: '1111' },
+    { dateCreated: new Date(), guildId: '5678', guildName: 'Pokemon Masters', ownerId: '2222' },
+    { dateCreated: new Date(), guildId: '9012', guildName: 'Web Team Dropouts', ownerId: '3333' }
+  ];
 
   constructor(private guildService: GuildService) { }
 
@@ -20,8 +24,9 @@ export class GuildTableComponent implements OnInit {
     this.guildService.GetGuilds().subscribe({
       next: guilds => {
         this.dataSource = new MatTableDataSource<IGuild>(guilds);
-        this.guildz = guilds;
-        console.log(this.guildz);
+      },
+      error: err => {
+        this.dataSource = new MatTableDataSource<IGuild>(this.sampleGuildData);
       }
     });
   }
