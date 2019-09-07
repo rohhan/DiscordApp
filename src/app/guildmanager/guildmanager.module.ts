@@ -9,6 +9,7 @@ import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { MainContentComponent } from './components/maincontent/maincontent.component';
 import { RouterModule, Routes } from '@angular/router';
+import { GuildTableComponent } from './components/guildtable/guildtable.component';
 
 const routes: Routes = [
   { path: '', component: GuildManagerAppComponent,
@@ -22,6 +23,7 @@ const routes: Routes = [
   declarations: [
     GuildManagerAppComponent,
     GuildsComponent,
+    GuildTableComponent,
     MainContentComponent,
     SidenavComponent,
     ToolbarComponent
