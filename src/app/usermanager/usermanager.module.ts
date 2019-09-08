@@ -8,7 +8,7 @@ import { UserTableComponent } from './components/usertable/usertable.component';
 import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
-  { path: 'users', component: UserManagerAppComponent }
+  { path: 'users/:id', component: UserManagerAppComponent }
 ];
 
 @NgModule({

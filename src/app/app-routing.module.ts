@@ -6,7 +6,7 @@ import { UserManagerModule } from './usermanager/usermanager.module';
 
 const routes: Routes = [
   { path: 'guilds', loadChildren: './guildmanager/guildmanager.module#GuildManagerModule' },
-  { path: 'users', loadChildren: './usermanager/usermanager.module#UserManagerModule' },
+  { path: 'users/:id', loadChildren: './usermanager/usermanager.module#UserManagerModule' },
   { path: '**', redirectTo: 'guilds' }
 ];
 

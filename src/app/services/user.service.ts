@@ -13,8 +13,8 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
-  GetUsers(): Observable<IUser[]> {
-    const users = this.http.get<IUser[]>(this.usersUrl);
+  GetUsers(guildDiscordId: string): Observable<IUser[]> {
+    const users = this.http.get<IUser[]>(`${this.usersUrl}/${guildDiscordId}`);
     return users;
   }
 }

@@ -10,12 +10,12 @@ import { GuildService } from '../../../services/guild.service';
   styleUrls: ['./guildtable.component.scss']
 })
 export class GuildTableComponent implements OnInit {
-  displayedColumns: string[] = ['dateCreated', 'guildId', 'guildName', 'ownerId'];
+  displayedColumns: string[] = ['dateCreated', 'guildDiscordId', 'guildName', 'ownerId', 'users'];
   dataSource: MatTableDataSource<IGuild>;
   sampleGuildData: IGuild[] = [
-    { dateCreated: new Date(), guildId: '1234', guildName: 'Turn on the backend API', ownerId: '1111' },
-    { dateCreated: new Date(), guildId: '5678', guildName: 'Pokemon Masters', ownerId: '2222' },
-    { dateCreated: new Date(), guildId: '9012', guildName: 'Web Team Dropouts', ownerId: '3333' }
+    { dateCreated: new Date(), guildDiscordId: '1234', guildName: 'Turn on the backend API', ownerId: '1111' },
+    { dateCreated: new Date(), guildDiscordId: '5678', guildName: 'Pokemon Masters', ownerId: '2222' },
+    { dateCreated: new Date(), guildDiscordId: '9012', guildName: 'Web Team Dropouts', ownerId: '3333' }
   ];
 
   constructor(private guildService: GuildService) { }
