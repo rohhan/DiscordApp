@@ -1,0 +1,25 @@
+<mat-sidenav-container class="guilds-sidenav-container">
+  <mat-sidenav #sidenav class="guilds-sidenav mat-elevation-z10" opened="true" mode="side">
+    <mat-toolbar color="primary">
+      Guilds
+    </mat-toolbar>
+    <mat-action-list>
+      <mat-list-item>Item 1</mat-list-item>
+      <mat-list-item>Item 2</mat-list-item>
+      <mat-list-item>Item 3</mat-list-item>
+    </mat-action-list>
+  </mat-sidenav>
+
+  <div class="guilds-sidenav-content">
+    <!-- <app-toolbar></app-toolbar> -->
+    <mat-toolbar color="primary">
+      <button mat-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>Guild Manager</span>
+    </mat-toolbar>
+    <div class="wrapper">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</mat-sidenav-container>
