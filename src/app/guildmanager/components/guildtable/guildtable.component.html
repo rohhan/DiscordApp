@@ -4,16 +4,16 @@
     <!--- Note that these columns can be defined in any order.
               The actual rendered columns are set as a property on the row definition" -->
 
-    <!-- Position Column -->
+    <!-- Date Created Column -->
     <ng-container matColumnDef="dateCreated">
       <th mat-header-cell *matHeaderCellDef> Date Created </th>
       <td mat-cell *matCellDef="let guild"> {{guild.dateCreated | date}} </td>
     </ng-container>
 
     <!-- Guild Id Column -->
-    <ng-container matColumnDef="guildId">
+    <ng-container matColumnDef="guildDiscordId">
       <th mat-header-cell *matHeaderCellDef> Guild Id </th>
-      <td mat-cell *matCellDef="let guild"> {{guild.guildId}} </td>
+      <td mat-cell *matCellDef="let guild"> {{guild.guildDiscordId}} </td>
     </ng-container>
 
     <!-- Guild Name Column -->
@@ -27,6 +27,11 @@
       <th mat-header-cell *matHeaderCellDef> Owner Id </th>
       <td mat-cell *matCellDef="let guild"> {{guild.ownerId}} </td>
     </ng-container>
+
+    <ng-container matColumnDef="users">
+        <th mat-header-cell *matHeaderCellDef> Users </th>
+        <td mat-cell *matCellDef="let guild" class="hover-cursor"> <a [routerLink]="['/users', guild.guildDiscordId]">Users</a></td>
+      </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>

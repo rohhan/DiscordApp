@@ -10,13 +10,14 @@ import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { MainContentComponent } from './components/maincontent/maincontent.component';
 import { RouterModule, Routes } from '@angular/router';
 import { GuildTableComponent } from './components/guildtable/guildtable.component';
+import { UserManagerAppComponent } from '../usermanager/usermanagerapp.component';
 
 const routes: Routes = [
-  { path: '', component: GuildManagerAppComponent,
+  { path: 'guilds', component: GuildManagerAppComponent,
     children: [
       { path: '', component: MainContentComponent }
-    ] },
-  { path: '**', redirectTo: '' }
+    ]
+  }
 ];
 
 @NgModule({

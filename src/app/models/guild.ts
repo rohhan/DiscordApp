@@ -1,6 +1,6 @@
 export interface IGuild {
   dateCreated: Date;
-  guildId: string;
+  guildDiscordId: string;
   guildName: string;
   ownerId: string;
 }
