@@ -35,7 +35,7 @@ export class UserTableComponent implements OnInit {
   }
 
   initializeDataSource() {
-    this.userService.GetUsers(this.guildDiscordId).subscribe({
+    this.userService.getUsers(this.guildDiscordId).subscribe({
       next: users => {
         this.dataSource = new MatTableDataSource<IUser>(users);
       },
