@@ -10,7 +10,7 @@ import { GuildService } from '../../../services/guild.service';
   styleUrls: ['./guildtable.component.scss']
 })
 export class GuildTableComponent implements OnInit {
-  displayedColumns: string[] = ['dateCreated', 'guildDiscordId', 'guildName', 'ownerId', 'users'];
+  displayedColumns: string[] = ['dateCreated', 'guildDiscordId', 'guildName', 'ownerId', 'users', 'graph'];
   dataSource: MatTableDataSource<IGuild>;
   sampleGuildData: IGuild[] = [
     { dateCreated: new Date(), guildDiscordId: '1234', guildName: 'Turn on the backend API', ownerId: '1111' },
