@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+
 import { UserService } from '../../../services/user.service';
 import { IUserCountData } from 'src/app/models/usercountdata';
 
@@ -14,6 +16,7 @@ export class UserGraphComponent implements OnInit {
         tension: .1
       }
     },
+    pointHoverBackgroundColor: true,
     responsivness: true,
     scaleShowVerticalLines: true,
     scales: {
@@ -37,15 +40,27 @@ export class UserGraphComponent implements OnInit {
   }];
   realLineChartData: { x: Date, y: number }[];
 
-  constructor(private userService: UserService) {}
+  guildDiscordId: string;
+
+  constructor(
+    private userService: UserService,
+    private route: ActivatedRoute
+    ) {}
 
   ngOnInit() {
+    this.getParamsFromRoute();
     this.initializeDataSource();
+  }
+
+  getParamsFromRoute() {
+    this.route.params.subscribe(params => {
+      this.guildDiscordId = params.id;
+    });
   }
 
   initializeDataSource() {
     console.log('initialize data source');
-    this.userService.getUserCount('1234').subscribe({
+    this.userService.getUserCount(this.guildDiscordId).subscribe({
       next: userCount => {
         this.realLineChartData = userCount.map(val => ({ x: val.date, y: val.count }));
         this.lineChartData = [{
