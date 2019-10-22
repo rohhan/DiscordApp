@@ -5,12 +5,13 @@ import { Observable } from 'rxjs';
 
 import { IUser } from '../models/user';
 import { IUserCountData } from '../models/usercountdata';
+import { Constants } from '../constants';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-  private usersUrl = 'https://localhost:44399/api/users';
+  private usersUrl = `${Constants.apiRoot}users`;
 
   constructor(private http: HttpClient) { }
 

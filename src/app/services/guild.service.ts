@@ -4,13 +4,14 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 import { IGuild } from '../models/guild';
+import { Constants } from '../constants';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GuildService {
 
-  private guildUrl = 'https://localhost:44399/api/guilds';
+  private guildUrl = `${Constants.apiRoot}guilds`;
 
   constructor(private http: HttpClient) { }
 

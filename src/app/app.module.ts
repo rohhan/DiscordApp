@@ -6,15 +6,19 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MaterialModule } from './shared/material.module';
+import { UnauthorizedComponent } from './home/unauthorized.component';
+import { CoreModule } from './shared/core.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    UnauthorizedComponent
   ],
   imports: [
     AppRoutingModule,
     BrowserAnimationsModule,
     BrowserModule,
+    CoreModule,
     HttpClientModule
   ],
   providers: [],
