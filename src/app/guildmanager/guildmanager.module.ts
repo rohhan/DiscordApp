@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 
-import { MaterialModule } from '../shared/material.module';
+import { MaterialModule } from '../core/material.module';
 import { GuildManagerAppComponent } from './guildmanagerapp.component';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';

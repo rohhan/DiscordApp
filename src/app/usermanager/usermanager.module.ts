@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 
 import { ChartsModule } from 'ng2-charts';
 
-import { MaterialModule } from '../shared/material.module';
+import { MaterialModule } from '../core/material.module';
 import { UserManagerAppComponent } from './usermanagerapp.component';
 import { UserTableComponent } from './components/usertable/usertable.component';
 import { Routes, RouterModule } from '@angular/router';

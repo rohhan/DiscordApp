@@ -1,14 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-
-import { AuthService } from './core/auth-service.component';
+import { AuthService } from '../core/auth-service.component';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+    selector: 'app-home',
+    templateUrl: 'home.component.html'
 })
-export class AppComponent implements OnInit {
-  title = 'DiscordApp';
+
+export class HomeComponent implements OnInit {
   isLoggedIn = false;
 
   constructor(private _authService: AuthService) {
@@ -21,5 +19,13 @@ export class AppComponent implements OnInit {
     this._authService.isLoggedIn().then(loggedIn => {
       this.isLoggedIn = loggedIn;
     });
+  }
+
+  login() {
+    this._authService.login();
+  }
+
+  logout() {
+    this._authService.logout();
   }
 }
